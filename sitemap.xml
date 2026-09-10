@@ -6,6 +6,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://www.precisionmedtechservices.com/about-us</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://www.precisionmedtechservices.com/downloads</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -16,17 +21,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.precisionmedtechservices.com/contact-us</loc>
-    <lastmod>2026-09-09</lastmod>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
     <loc>https://www.precisionmedtechservices.com/faq</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.precisionmedtechservices.com/about-us</loc>
+    <loc>https://www.precisionmedtechservices.com/contact-us</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
   </url>
