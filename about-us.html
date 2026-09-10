@@ -94,7 +94,9 @@ nav.links a.current{color:var(--ink); border-bottom-color:var(--blue);}
 .hero-photo-frame img{border-radius:12px; width:100%; height:420px; object-fit:cover; display:block;}
 .hero-photo-frame.portrait{max-width:300px; margin:0 auto;}
 .hero-photo-frame.portrait img{height:400px; object-position:center 12%;}
-@media (max-width:880px){ .hero-grid{grid-template-columns:1fr;} .hero-photo-frame img{height:280px;} .hero-photo-frame.portrait{max-width:240px;} .hero-photo-frame.portrait img{height:300px;} }
+.hero-photo-frame.uncropped{max-width:280px; margin:0 auto;}
+.hero-photo-frame.uncropped img{height:auto; object-fit:contain;}
+@media (max-width:880px){ .hero-grid{grid-template-columns:1fr;} .hero-photo-frame img{height:280px;} .hero-photo-frame.portrait{max-width:240px;} .hero-photo-frame.portrait img{height:300px;} .hero-photo-frame.uncropped{max-width:240px;} .hero-photo-frame.uncropped img{height:auto;} }
 
 main{padding:64px 0;}
 section{margin-bottom:64px;}
@@ -242,8 +244,44 @@ footer{background:var(--ink); color:#AEC0D2; padding:48px 0 24px; font-size:0.9r
         <a class="btn-outline" href="mailto:CSenzamici@PrecisionMedTechServices.com">Request Service</a>
       </div>
     </div>
-    <div class="hero-photo-frame portrait">
-        <img src="chris-portrait.png" alt="Chris Senzamici, owner and technician of Precision MedTech Services">
+    <div class="hero-photo-frame" style="background:none; padding:0;">
+        <svg viewBox="0 0 380 420" role="img" aria-label="Credentials: 30+ years Biodex-certified, the only independent national provider, serving all of Florida">
+  <rect x="0" y="0" width="380" height="420" rx="16" fill="#0B2036"/>
+  <text x="28" y="46" fill="#ffffff" font-family="Manrope, sans-serif" font-size="20" font-weight="800">Credentials</text>
+  <line x1="28" y1="62" x2="352" y2="62" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+
+  <g transform="translate(28,86)">
+    <circle cx="24" cy="24" r="24" fill="url(#g1)"/>
+    <path d="M14 24l7 7 15-15" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="62" y="19" fill="#ffffff" font-family="Manrope, sans-serif" font-size="16" font-weight="800">30+ Years</text>
+    <text x="62" y="40" fill="#AEC0D2" font-family="Inter, sans-serif" font-size="12.5">Biodex-certified field experience</text>
+  </g>
+
+  <g transform="translate(28,166)">
+    <circle cx="24" cy="24" r="24" fill="url(#g1)"/>
+    <path d="M14 24l7 7 15-15" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="62" y="14" fill="#ffffff" font-family="Manrope, sans-serif" font-size="16" font-weight="800">Only Independent</text>
+    <text x="62" y="33" fill="#ffffff" font-family="Manrope, sans-serif" font-size="16" font-weight="800">National Provider</text>
+    <text x="62" y="52" fill="#AEC0D2" font-family="Inter, sans-serif" font-size="12.5">Factory-trained on Biodex equipment</text>
+  </g>
+
+  <g transform="translate(28,266)">
+    <circle cx="24" cy="24" r="24" fill="url(#g1)"/>
+    <path d="M14 24l7 7 15-15" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="62" y="19" fill="#ffffff" font-family="Manrope, sans-serif" font-size="16" font-weight="800">Statewide</text>
+    <text x="62" y="40" fill="#AEC0D2" font-family="Inter, sans-serif" font-size="12.5">Serving all of Florida</text>
+  </g>
+
+  <line x1="28" y1="346" x2="352" y2="346" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+  <text x="28" y="374" fill="#ffffff" font-family="Manrope, sans-serif" font-size="14" font-weight="800">Keeping Care in Motion</text>
+  <text x="28" y="394" fill="#AEC0D2" font-family="Inter, sans-serif" font-size="12">Precision MedTech Services</text>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16B9EC"/>
+      <stop offset="1" stop-color="#0B7FD6"/>
+    </linearGradient>
+  </defs>
+</svg>
       </div>
   </div>
 </div>
