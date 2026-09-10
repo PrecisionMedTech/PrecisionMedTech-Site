@@ -94,7 +94,9 @@ nav.links a.current{color:var(--ink); border-bottom-color:var(--blue);}
 .hero-photo-frame img{border-radius:12px; width:100%; height:420px; object-fit:cover; display:block;}
 .hero-photo-frame.portrait{max-width:300px; margin:0 auto;}
 .hero-photo-frame.portrait img{height:400px; object-position:center 12%;}
-@media (max-width:880px){ .hero-grid{grid-template-columns:1fr;} .hero-photo-frame img{height:280px;} .hero-photo-frame.portrait{max-width:240px;} .hero-photo-frame.portrait img{height:300px;} }
+.hero-photo-frame.uncropped{max-width:280px; margin:0 auto;}
+.hero-photo-frame.uncropped img{height:auto; object-fit:contain;}
+@media (max-width:880px){ .hero-grid{grid-template-columns:1fr;} .hero-photo-frame img{height:280px;} .hero-photo-frame.portrait{max-width:240px;} .hero-photo-frame.portrait img{height:300px;} .hero-photo-frame.uncropped{max-width:240px;} .hero-photo-frame.uncropped img{height:auto;} }
 
 main{padding:64px 0;}
 section{margin-bottom:64px;}
@@ -242,8 +244,8 @@ footer{background:var(--ink); color:#AEC0D2; padding:48px 0 24px; font-size:0.9r
         <a class="btn-outline" href="mailto:CSenzamici@PrecisionMedTechServices.com">Request Service</a>
       </div>
     </div>
-    <div class="hero-photo-frame">
-        <img src="treadmill-team.png" alt="Precision MedTech Services technician inspecting a treadmill with clinical staff">
+    <div class="hero-photo-frame uncropped">
+        <img src="chris-full.jpg" alt="Chris Senzamici, owner and technician of Precision MedTech Services">
       </div>
   </div>
 </div>
