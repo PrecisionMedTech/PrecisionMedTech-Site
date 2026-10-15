@@ -209,6 +209,9 @@ hr.rule{border:none;border-top:1px solid var(--line);margin:0}
 
 /* ---------- prose (long-form pages) ---------- */
 .prose{max-width:760px}
+/* in-text links: make links inside running text visible */
+main p a:not(.btn),main li a:not(.btn){color:var(--teal-deep);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;transition:color .2s}
+main p a:not(.btn):hover,main li a:not(.btn):hover{color:var(--teal)}
 .prose h2{font-size:1.7rem;margin-bottom:16px}
 .prose h2:not(:first-child){margin-top:52px}
 .prose p{font-size:1.06rem;margin-bottom:16px}
