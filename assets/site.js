@@ -5,7 +5,7 @@ if(menu && nav){menu.addEventListener('click',()=>{const open=menu.getAttribute(
 document.querySelectorAll('#year').forEach(e=>e.textContent=new Date().getFullYear());
 const form=document.querySelector('#service-form');
 /* Web3Forms access key (free, from web3forms.com). When empty, the form falls back to opening the visitor's email app. */
-const WEB3FORMS_KEY = "";
+const WEB3FORMS_KEY = "c985c578-da26-405e-a6a0-3f43c1aa35c3";
 function openEmailApp(data,status){const lines=[...data.entries()].filter(([k])=>k!=='botcheck').map(([k,v])=>`${k.toUpperCase()}: ${String(v).trim()}`);const subject='Service Request — '+data.get('equipment')+' — '+data.get('location');window.location.href='mailto:'+SERVICE_EMAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n\n'));status.textContent='Opening your email application. Please send the prepared message to complete your request.';}
 if(form)form.addEventListener('submit',async event=>{
   event.preventDefault();
