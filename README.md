@@ -26,7 +26,7 @@ Production-oriented, responsive, dependency-free static website. No Node build o
 6. Test all pages, the mobile menu, and the inquiry form from a phone and desktop.
 
 ## Redirects from the old site
-The root files `about-us.html`, `contact-us.html`, `downloads.html`, `faq.html` and `right-to-choose.html` are small redirect pages that send old addresses to the new pages. The old PDFs (`/4-Ways-to-Prevent-Costly-Biodex-Repairs.pdf`, `/The-Unreliable-Zone.pdf`) now live in `/resources/`; copies are kept at the root so old links keep working.
+The root files `about-us.html`, `contact-us.html`, `downloads.html`, `faq.html`, `right-to-choose.html` and `Biodex-repair-florida.html` (plus a lowercase copy) are small redirect pages that send old addresses to the new pages. The old PDFs (`/4-Ways-to-Prevent-Costly-Biodex-Repairs.pdf`, `/The-Unreliable-Zone.pdf`) now live in `/resources/`; copies are kept at the root so old links keep working.
 
 ## Local preview
 From this directory: `python -m http.server 8000`, then open `http://localhost:8000`.
