@@ -1,38 +1,54 @@
 # Precision MedTech Services — Website
 
-Production-oriented, responsive, dependency-free static website. No Node build or paid hosting required.
+Live site: https://www.precisionmedtechservices.com
+Hosted free on GitHub Pages from the `main` branch. Any change pushed to `main` is live within a few minutes.
 
-## Included
-- Homepage and 10 additional pages (including Your Right to Choose) (FAQ is linked from the footer) (Biodex, Florida rehab equipment, preventive maintenance, About, Resources, FAQ, Contact, Privacy, Accessibility)
-- Original owner-provided Biodex photograph and portrait, optimized as WebP
-- Responsive navigation, keyboard accessibility, SEO metadata, Open Graph tags, JSON-LD (business + FAQ), sitemap, robots.txt, llms.txt
-- Service-request form sent through Web3Forms (key set as `WEB3FORMS_KEY` in `assets/site.js`); falls back to the visitor's email app if the key is empty
-- GitHub Pages deployment workflow
+Plain HTML and CSS — no build step, no database, nothing to install.
 
-## REQUIRED before launch
-1. **Receiving email** is set in `assets/site.js` (`SERVICE_EMAIL`). Change it there if the address ever changes.
-2. **Confirm permission to use the clinic photograph** at the location where it was taken. The photographer owns the image, subject to facility policies/agreements.
-3. **Review claims and service areas**, especially nationwide Biodex availability and manufacturer relationships. No affiliation or current authorization is claimed.
-4. **Confirm your domain.** This starter assumes `https://www.precisionmedtechservices.com`. If different, update `sitemap.xml`, `robots.txt`, and all canonical/OG URLs in the HTML files.
-5. After launch, add the site in Google Search Console and submit `sitemap.xml`; claim/update your Google Business Profile with the same name, phone and service area.
-6. Review privacy notice for any additional analytics, email, hosting or tracking services you activate.
+## Pages
 
-## Publish with GitHub Pages
-1. Create a **public** GitHub repository, e.g. `precision-medtech-website`.
-2. Upload **the contents of this folder** to the repository root (not the outer folder). Preserve the `assets/`, `.github/`, and page subfolders.
-3. In GitHub, go to **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-4. Push to the `main` branch. The included workflow deploys the site. GitHub will show the public URL under Pages.
-5. To use your custom domain, configure DNS according to GitHub Pages documentation and set the domain in Settings → Pages. For apex domain use GitHub's published A records; for `www`, use a CNAME to your GitHub Pages host. Do not change DNS until you are ready to replace the existing site.
-6. Test all pages, the mobile menu, and the inquiry form from a phone and desktop.
+| Address | File |
+|---|---|
+| `/` | `index.html` |
+| `/biodex-repair/` | `biodex-repair/index.html` |
+| `/rehab-equipment/` | `rehab-equipment/index.html` |
+| `/preventive-maintenance/` | `preventive-maintenance/index.html` |
+| `/right-to-choose/` | `right-to-choose/index.html` |
+| `/resources/` | `resources/index.html` (plus two article folders and their PDFs) |
+| `/about/` | `about/index.html` |
+| `/faq/` | `faq/index.html` |
+| `/contact/` | `contact/index.html` |
+| `/privacy/`, `/accessibility/` | their folders |
+| page not found | `404.html` |
 
-## Redirects from the old site
-The root files `about-us.html`, `contact-us.html`, `downloads.html`, `faq.html`, `right-to-choose.html` and `Biodex-repair-florida.html` (plus a lowercase copy) are small redirect pages that send old addresses to the new pages. The old PDFs (`/4-Ways-to-Prevent-Costly-Biodex-Repairs.pdf`, `/The-Unreliable-Zone.pdf`) now live in `/resources/`; copies are kept at the root so old links keep working.
+Shared files live in `assets/`: `styles.css` (look and feel), `site.js` (menu and contact form), logo, favicon and photos.
 
-## Local preview
-From this directory: `python -m http.server 8000`, then open `http://localhost:8000`.
+## Contact form
 
-## Important technical notes
-- GitHub Pages serves static files only. The contact form posts to Web3Forms; the privacy notice describes this.
-- All internal page links are relative, so the site also works at a GitHub Pages project subpath. Canonical URLs point to the intended custom domain.
-- The site is designed for performance but no actual Lighthouse or Core Web Vitals results are claimed. Test against your deployed URL.
-- Images of equipment may include third-party trademarks. The site uses them descriptively, not to imply endorsement.
+The Request Service form sends through **Web3Forms** (free plan, 250 submissions a month) to CSenzamici@PrecisionMedTechServices.com. The access key is `WEB3FORMS_KEY` in `assets/site.js`. Manage it at app.web3forms.com. If sending fails, visitors are shown the phone number and email instead.
+
+## Search and AI visibility
+
+- `sitemap.xml` lists every page with its last-updated date. Update the date when a page changes.
+- `robots.txt` allows all search engines and AI crawlers.
+- `llms.txt` is a plain-text summary of the business for AI tools.
+- Each page carries structured data (JSON-LD) describing the business, services, FAQs and articles. The homepage's business entry links the Google Business Profile and LinkedIn pages.
+- The site is registered in Google Search Console and Bing Webmaster Tools.
+
+## Old addresses from the Google Sites version
+
+These files exist only to send old links to the new pages. Keep them.
+
+- `about-us.html`, `contact-us.html`, `downloads.html`, `faq.html`, `right-to-choose.html`
+- `Biodex-repair-florida.html` and `biodex-repair-florida.html` (the old main page)
+- `4-Ways-to-Prevent-Costly-Biodex-Repairs.pdf` and `The-Unreliable-Zone.pdf` at the top level are copies kept so old PDF links keep working; the current copies are in `resources/`.
+
+## Don't delete
+
+- `CNAME` — connects the custom domain. Removing it takes the site off precisionmedtechservices.com.
+
+## Content rules
+
+- Calibration is never claimed; preventive maintenance is described as inspection and functional checks.
+- "The only factory-trained independent technician in the country for Biodex/SMTI equipment" is the approved wording.
+- Brand names are used only to identify equipment serviced; no manufacturer endorsement is implied.
