@@ -4,7 +4,32 @@ const nav = document.querySelector('#primary-nav');
 if(menu && nav){menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));nav.classList.toggle('is-open',!open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('is-open');menu.setAttribute('aria-expanded','false')}));}
 document.querySelectorAll('#year').forEach(e=>e.textContent=new Date().getFullYear());
 const form=document.querySelector('#service-form');
-if(form)form.addEventListener('submit',event=>{event.preventDefault();const status=document.querySelector('#form-status');if(SERVICE_EMAIL.startsWith('REPLACE_')){status.textContent='Site owner: configure SERVICE_EMAIL in assets/site.js before this form can be used.';return;}const data=new FormData(form);const lines=[...data.entries()].map(([k,v])=>`${k.toUpperCase()}: ${String(v).trim()}`);const subject='Service Request — '+data.get('equipment')+' — '+data.get('location');const url='mailto:'+SERVICE_EMAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n\n'));status.textContent='Opening your email application. Please send the prepared message to complete your request.';window.location.href=url;});
+/* Web3Forms access key (free, from web3forms.com). When empty, the form falls back to opening the visitor's email app. */
+const WEB3FORMS_KEY = "";
+function openEmailApp(data,status){const lines=[...data.entries()].filter(([k])=>k!=='botcheck').map(([k,v])=>`${k.toUpperCase()}: ${String(v).trim()}`);const subject='Service Request — '+data.get('equipment')+' — '+data.get('location');window.location.href='mailto:'+SERVICE_EMAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n\n'));status.textContent='Opening your email application. Please send the prepared message to complete your request.';}
+if(form)form.addEventListener('submit',async event=>{
+  event.preventDefault();
+  const status=document.querySelector('#form-status');
+  const data=new FormData(form);
+  if(!WEB3FORMS_KEY){openEmailApp(data,status);return;}
+  if(data.get('botcheck'))return;
+  const button=form.querySelector('button[type="submit"]');
+  const payload=Object.fromEntries([...data.entries()].filter(([k])=>k!=='botcheck').map(([k,v])=>[k,String(v).trim()]));
+  payload.access_key=WEB3FORMS_KEY;
+  payload.subject='Service Request — '+payload.equipment+' — '+payload.location;
+  payload.from_name='PMTS Website';
+  payload.replyto=payload.email;
+  button.disabled=true;status.textContent='Sending your request…';
+  try{
+    const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)});
+    const json=await res.json().catch(()=>({}));
+    if(!res.ok||json.success===false)throw new Error(json.message||'Request failed');
+    form.reset();
+    status.textContent='Thank you. Your request was sent. Chris will reply to the email address you provided.';
+  }catch(err){
+    status.innerHTML='Sorry, the request could not be sent. Please call <a href="tel:+14076250538">(407) 625-0538</a> or email <a href="mailto:'+SERVICE_EMAIL+'">'+SERVICE_EMAIL+'</a>.';
+  }finally{button.disabled=false;}
+});
 
 /* header scroll shadow */
 const header=document.querySelector('.site-header');

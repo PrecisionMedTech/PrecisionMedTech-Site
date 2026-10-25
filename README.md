@@ -6,7 +6,7 @@ Production-oriented, responsive, dependency-free static website. No Node build o
 - Homepage and 10 additional pages (including Your Right to Choose) (FAQ is linked from the footer) (Biodex, Florida rehab equipment, preventive maintenance, About, Resources, FAQ, Contact, Privacy, Accessibility)
 - Original owner-provided Biodex photograph and portrait, optimized as WebP
 - Responsive navigation, keyboard accessibility, SEO metadata, Open Graph tags, JSON-LD (business + FAQ), sitemap, robots.txt, llms.txt
-- Service-request form that opens the visitor's email app (no server or database)
+- Service-request form sent through Web3Forms (key set as `WEB3FORMS_KEY` in `assets/site.js`); falls back to the visitor's email app if the key is empty
 - GitHub Pages deployment workflow
 
 ## REQUIRED before launch
@@ -32,7 +32,7 @@ The root files `about-us.html`, `contact-us.html`, `downloads.html`, `faq.html`,
 From this directory: `python -m http.server 8000`, then open `http://localhost:8000`.
 
 ## Important technical notes
-- GitHub Pages serves static files only. The contact form uses `mailto:`. For a real hosted submission form, integrate a trusted form provider and update the privacy notice.
+- GitHub Pages serves static files only. The contact form posts to Web3Forms; the privacy notice describes this.
 - All internal page links are relative, so the site also works at a GitHub Pages project subpath. Canonical URLs point to the intended custom domain.
 - The site is designed for performance but no actual Lighthouse or Core Web Vitals results are claimed. Test against your deployed URL.
 - Images of equipment may include third-party trademarks. The site uses them descriptively, not to imply endorsement.
