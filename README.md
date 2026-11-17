@@ -19,6 +19,7 @@ Plain HTML and CSS — no build step, no database, nothing to install.
 | `/faq/` | `faq/index.html` |
 | `/contact/` | `contact/index.html` |
 | `/privacy/`, `/accessibility/` | their folders |
+| `/card/` | `card/index.html` — digital business card (headshot, logo, link preview image and icon in the same folder) |
 | page not found | `404.html` |
 
 Shared files live in `assets/`: `styles.css` (look and feel), `site.js` (menu and contact form), logo, favicon and photos. `assets/field/` holds the background-blurred field photos used in the collage on the Biodex Repair page.
