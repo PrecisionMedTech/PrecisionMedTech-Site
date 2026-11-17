@@ -343,3 +343,9 @@ main p a:not(.btn):hover,main li a:not(.btn):hover{color:#005f92}
   .field-collage figcaption{padding:32px 12px 10px;font-size:.76rem}
 }
 @media(prefers-reduced-motion:reduce){.field-collage img{transition:none}.field-collage figure:hover img{transform:none}}
+.field-collage.cols-4{grid-template-columns:repeat(4,1fr);gap:14px}
+.field-collage.cols-4 figure{aspect-ratio:3/4}
+.field-collage.cols-4 figure:nth-child(3n+2){transform:none}
+.field-collage.cols-4 figure:nth-child(even){transform:translateY(32px)}
+@media(max-width:1100px){.field-collage.cols-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.field-collage.cols-4 figure:nth-child(even){transform:none}}
