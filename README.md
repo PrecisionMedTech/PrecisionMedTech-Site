@@ -21,7 +21,7 @@ Plain HTML and CSS — no build step, no database, nothing to install.
 | `/privacy/`, `/accessibility/` | their folders |
 | page not found | `404.html` |
 
-Shared files live in `assets/`: `styles.css` (look and feel), `site.js` (menu and contact form), logo, favicon and photos.
+Shared files live in `assets/`: `styles.css` (look and feel), `site.js` (menu and contact form), logo, favicon and photos. `assets/field/` holds the background-blurred field photos used in the collage on the Biodex Repair page.
 
 ## Contact form
 

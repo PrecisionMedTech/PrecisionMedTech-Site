@@ -325,3 +325,21 @@ main p a:not(.btn):hover,main li a:not(.btn):hover{color:#005f92}
 @media(max-width:1100px){.trio.cols-2{grid-template-columns:1fr}}
 .nav>a.btn[aria-current=page]{background:var(--teal);color:#fff;border-color:var(--teal)}
 .nav>a.btn[aria-current=page]::after{display:none}
+
+/* Field photo collage (Biodex repair page) */
+.field-head{max-width:720px;margin:64px 0 28px}
+.field-head h3{font-family:var(--serif);font-size:1.6rem;font-weight:500;margin:8px 0 10px}
+.field-head p{color:var(--muted)}
+.field-collage{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:40px}
+.field-collage figure{position:relative;margin:0;aspect-ratio:4/5;overflow:hidden;border-radius:2px;box-shadow:var(--shadow);background:var(--navy)}
+.field-collage figure:nth-child(3n+2){transform:translateY(40px)}
+.field-collage img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.field-collage figure:hover img{transform:scale(1.03)}
+.field-collage figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 16px;color:#fff;font-size:.86rem;font-weight:600;letter-spacing:.02em;background:linear-gradient(to top,rgba(6,20,33,.82),rgba(6,20,33,0))}
+@media(max-width:760px){
+  .field-head{margin-top:48px}
+  .field-collage{grid-template-columns:repeat(2,1fr);gap:10px;padding-bottom:0}
+  .field-collage figure:nth-child(3n+2){transform:none}
+  .field-collage figcaption{padding:32px 12px 10px;font-size:.76rem}
+}
+@media(prefers-reduced-motion:reduce){.field-collage img{transition:none}.field-collage figure:hover img{transform:none}}
